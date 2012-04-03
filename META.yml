@@ -1,0 +1,24 @@
+---
+abstract: 'Patch module for LWP::UserAgent'
+author:
+  - 'Steven Haryanto <stevenharyanto@gmail.com>'
+build_requires:
+  Module::Build: 0.3601
+configure_requires:
+  Module::Build: 0.3601
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 4.300006, CPAN::Meta::Converter version 2.113640'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: LWP-UserAgent-patch-https_hard_timeout
+requires:
+  LWP::UserAgent: 6.04
+  Log::Any: 0
+  Module::Patch: 0.02
+  perl: 5.010001
+resources:
+  homepage: http://search.cpan.org/dist/LWP-UserAgent-patch-https_hard_timeout/
+  repository: http://github.com/sharyanto/perl-LWP-UserAgent-patch-https_hard_timeout
+version: 0.01

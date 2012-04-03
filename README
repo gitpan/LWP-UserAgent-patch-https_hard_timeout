@@ -1,0 +1,35 @@
+NAME
+    LWP::UserAgent::patch::https_hard_timeout - Patch module for
+    LWP::UserAgent
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     use LWP::UserAgent;
+     use LWP::UserAgent::patch::https_hard_timeout -timeout => 300;
+
+DESCRIPTION
+    This module contains a simple workaround for hanging issue with HTTPS
+    requests. It wraps send_request() with an alarm() timeout.
+
+FAQ
+  Why not subclass?
+    By patching, you do not need to replace all the client code which uses
+    LWP::UserAgent (or WWW::Mechanize, and so on).
+
+SEE ALSO
+    http://stackoverflow.com/questions/9400068/make-timeout-work-for-lwpuser
+    agent-https
+
+    LWPx::ParanoidAgent
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
