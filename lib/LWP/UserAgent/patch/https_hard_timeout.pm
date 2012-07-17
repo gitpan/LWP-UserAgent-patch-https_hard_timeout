@@ -5,13 +5,15 @@ use strict;
 no warnings;
 use Log::Any '$log';
 
-use parent qw(Module::Patch);
+use Module::Patch 0.07 qw();
+use base qw(Module::Patch);
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 our %config;
 
 my $p_send_request = sub {
+    my $ctx  = shift;
     my $orig = shift;
 
     my ($self, $request, $arg, $size) = @_;
@@ -41,19 +43,21 @@ my $p_send_request = sub {
 
 sub patch_data {
     return {
+        v => 2,
         config => {
             -timeout => {
                 schema  => 'int*',
                 default => 3600,
             },
         },
-        versions => {
-            '6.04' => {
-                subs => {
-                    send_request => $p_send_request,
-                },
+        patches => [
+            {
+                action => 'wrap',
+                mod_version => qr/^6\.0.+/,
+                sub_name => 'send_request',
+                code => $p_send_request,
             },
-        },
+        ],
     };
 }
 
@@ -70,11 +74,10 @@ LWP::UserAgent::patch::https_hard_timeout - Patch module for LWP::UserAgent
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
- use LWP::UserAgent;
  use LWP::UserAgent::patch::https_hard_timeout -timeout => 300;
 
 =head1 DESCRIPTION
