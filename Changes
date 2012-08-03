@@ -1,8 +1,13 @@
 Revision history for LWP-UserAgent-patch-https_hard_timeout
 
+0.03    2012-08-03 (SHARYANTO)
+
+        No functional changes. Adjust to Module::Patch 0.10 (v=3).
+
+
 0.02    2012-07-17 (SHARYANTO)
 
-        No functional changes. Adjust to Module::Patch 0.07.
+        No functional changes. Adjust to Module::Patch 0.07 (v=2).
 
 
 0.01    2012-04-03 (SHARYANTO)

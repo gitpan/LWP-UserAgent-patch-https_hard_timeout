@@ -16,9 +16,9 @@ name: LWP-UserAgent-patch-https_hard_timeout
 requires:
   LWP::UserAgent: 6.04
   Log::Any: 0
-  Module::Patch: 0.07
+  Module::Patch: 0.10
   perl: 5.010001
 resources:
   homepage: http://search.cpan.org/dist/LWP-UserAgent-patch-https_hard_timeout/
   repository: http://github.com/sharyanto/perl-LWP-UserAgent-patch-https_hard_timeout
-version: 0.02
+version: 0.03
